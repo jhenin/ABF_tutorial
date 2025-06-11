@@ -1,0 +1,97 @@
+colvarsTrajFrequency       50000
+colvarsRestartFrequency    50000
+
+colvar {
+   name phi
+
+   width                    5.0
+
+   lowerboundary         -180.0
+   upperboundary            0.0
+
+   extendedlagrangian        on
+   extendedFluctuation      5.0
+   extendedTimeConstant     500
+   subtractAppliedForce      on
+   extendedLangevinDamping 10.0
+   expandBoundaries          on
+
+   dihedral {
+      group1 {
+	 atomNumbers 5
+      }
+      group2 {
+	 atomNumbers 7
+      }
+      group3 {
+	 atomNumbers 9
+      }
+      group4 {
+	 atomNumbers 15
+      }
+   }
+}
+
+colvar {
+   name psi
+
+   width                    5.0
+
+   lowerboundary            0.0
+   upperboundary          180.0
+
+   extendedlagrangian        on
+   extendedFluctuation      5.0
+   extendedTimeConstant     500
+   subtractAppliedForce      on
+   extendedLangevinDamping 10.0
+   expandBoundaries          on
+
+   dihedral {
+      group1 {
+	 atomNumbers 7
+      }
+      group2 {
+ 	 atomNumbers 9
+      }
+      group3 {
+	 atomNumbers 15
+      }
+      group4 {
+	 atomNumbers 17
+      }
+   }
+}
+
+harmonicWalls {               
+   name               phi-wall
+   colvars                 phi 
+   lowerWalls           -180.0
+   upperWalls              0.0
+   lowerWallConstant       0.2
+   upperWallConstant       0.2
+}        
+
+harmonicWalls {               
+   name               psi-wall
+   colvars                 psi 
+   lowerWalls              0.0
+   upperWalls            180.0
+   lowerWallConstant       0.2
+   upperWallConstant       0.2
+}        
+
+abf {
+   colvars             phi psi
+   fullSamples             500
+   writeCZARwindowFile     yes
+   historyFreq           50000
+}
+
+metadynamics {
+   colvars             phi psi
+   hillWidth               5.0
+   hillWeight              0.1
+   wellTempered             on
+   biasTemperature        3000
+}

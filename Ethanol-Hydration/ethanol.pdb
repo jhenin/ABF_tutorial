@@ -1,0 +1,11 @@
+REMARK original generated coordinate pdb file
+ATOM      1  C1  ETL1X   1      -3.046   0.213  -2.848  0.00  0.00      B1    
+ATOM      2  H1  ETL1X   1      -3.760   0.897  -3.003  0.00  0.00      B1    
+ATOM      3  H2  ETL1X   1      -1.020  -0.666  -3.233  1.00  0.00      B1   H
+ATOM      4  C2  ETL1X   1      -1.719   0.020  -1.310  1.00  0.00      B1   C
+ATOM      5  H3  ETL1X   1      -2.552   0.586  -0.902  1.00  0.00      B1   H
+ATOM      6  H4  ETL1X   1      -1.723  -0.970  -0.863  1.00  0.00      B1   H
+ATOM      7  H5  ETL1X   1      -0.788   0.523  -1.063  1.00  0.00      B1   H
+ATOM      8  O   ETL1X   1      -3.084  -0.754  -3.099  1.00  0.00      B1   O
+ATOM      9  H6  ETL1X   1      -3.195  -0.826  -4.052  1.00  0.00      B1   H
+END

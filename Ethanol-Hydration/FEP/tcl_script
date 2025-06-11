@@ -1,0 +1,14 @@
+source ../FEP_tools/fep.tcl
+alch on
+alchType fep
+alchFile decouple.fep
+alchCol B
+alchOutFreq 10
+alchOutFile decouple.fepout
+alchVdwLambdaEnd 1.0
+alchElecLambdaStart 0.5
+alchVdWShiftCoeff 5.0
+alchDecouple yes
+alchEquilSteps 2500
+set nSteps 52500
+runFEP 0.0 1.0 0.1 $nStep

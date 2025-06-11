@@ -1,0 +1,42 @@
+colvarsTrajFrequency      2000
+colvarsRestartFrequency  20000
+
+colvar {
+   name RMSD
+  
+   width 0.1
+
+   upperWall    8.0
+   
+   upperBoundary 7.5
+
+   upperWallConstant 10.0
+
+   extendedLagrangian on
+   extendedFluctuation 0.2
+   extendedTimeConstant 200
+   extendedLangevinDamping 2.0
+   subtractAppliedForce on
+
+   rmsd {
+      atoms { 
+         psfSegID BH BH
+         atomNameResidueRange CA 1-10 
+         atomNameResidueRange N 1-10 }
+      refPositionsFile deca-ala.pdb
+   }
+}
+
+
+abf {
+   colvars RMSD
+   fullSamples   500
+}
+
+metadynamics {
+   colvars RMSD
+   hillWeight 0.1
+   hillWidth  3
+   wellTempered   on
+   biasTemperature   4000
+}

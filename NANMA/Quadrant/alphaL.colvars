@@ -1,0 +1,56 @@
+colvarsTrajFrequency       5000
+colvarsRestartFrequency    5000
+
+colvar {
+   name phi
+   dihedral {
+      group1 {
+	 atomNumbers 5
+      }
+      group2 {
+	 atomNumbers 7
+      }
+      group3 {
+	 atomNumbers 9
+      }
+      group4 {
+	 atomNumbers 15
+      }
+   }
+}
+
+colvar {
+   name psi
+   dihedral {
+      group1 {
+	 atomNumbers 7
+      }
+      group2 {
+ 	 atomNumbers 9
+      }
+      group3 {
+	 atomNumbers 15
+      }
+      group4 {
+	 atomNumbers 17
+      }
+   }
+}
+
+harmonicWalls {               
+   name               phi-wall
+   colvars                 phi 
+   lowerWalls              0.0
+   upperWalls            180.0
+   lowerWallConstant      10.0
+   upperWallConstant      10.0
+}        
+
+harmonicWalls {               
+   name               psi-wall
+   colvars                 psi 
+   lowerWalls              0.0
+   upperWalls            180.0
+   lowerWallConstant      10.0
+   upperWallConstant      10.0
+}        

@@ -1,0 +1,30 @@
+configuration {
+  step        10000
+  dt 5.000000e-01
+  version 2023-07-21
+}
+
+colvar {
+  name phi
+  x  2.55106242937065e-02
+}
+
+colvar {
+  name psi
+  x  6.24669522257491e+01
+}
+
+restraint {
+  configuration {
+    step 10000
+    name phi-wall
+  }
+}
+
+restraint {
+  configuration {
+    step 10000
+    name psi-wall
+  }
+}
+

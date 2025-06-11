@@ -1,0 +1,45 @@
+colvarsTrajFrequency      2000
+colvarsRestartFrequency  20000
+
+colvar {
+   name AtomDistance
+  
+   width 0.1
+
+   lowerWall	12.0
+   upperWall    32.0
+   
+   lowerBoundary 12.0
+   upperBoundary 32.0
+
+   lowerWallConstant 10.0
+   upperWallConstant 10.0
+
+   extendedLagrangian on
+   extendedFluctuation  0.2
+   extendedTimeConstant 200
+   extendedLangevinDamping 2.0
+   subtractAppliedForce on
+   
+   distance {
+      group1 {
+         atomnumbers { 4 5 }
+      }
+      group2 {
+         atomnumbers { 99 100 }
+      }
+   }
+}
+
+
+abf {
+   colvars AtomDistance
+   fullSamples   500
+}
+metadynamics {
+   colvars AtomDistance
+   hillWeight 0.1
+   hillWidth  3
+   wellTempered   on
+   biasTemperature   4000
+}

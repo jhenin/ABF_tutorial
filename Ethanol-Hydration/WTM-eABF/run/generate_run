@@ -1,0 +1,19 @@
+#!/bin/bash
+
+let i=$2-1
+let n=$3-1
+while [ $i -le $n ]
+do
+   let j=1+$i
+   ./make_input $1 $i $j
+   if [[ $j -lt 10 ]] ; then
+      k=`echo $1-0$j`
+   elif [[ $j -lt 100 ]] ; then
+      k=`echo $1-$j`
+   else 
+      k=`echo $1-$j`
+   fi
+   echo "-> generating $k.namd "
+   let i=1+$i
+done
+
