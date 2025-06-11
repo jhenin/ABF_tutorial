@@ -5,12 +5,7 @@ colvar {
    name HBONDS
 
    width 0.05
-
-   upperWall    1.1
-
    upperBoundary 1.0
-
-   upperWallConstant 10.0
 
    extendedLagrangian
    extendedFluctuation 0.2
@@ -54,9 +49,13 @@ colvar {
    }
 }
 
+harmonicWalls {
+   colvars HBONDS
+   upperWalls     1.1
+   forceConstant 10.0
+}
 
 abf {
-
    colvars HBONDS
    fullSamples   500
 }

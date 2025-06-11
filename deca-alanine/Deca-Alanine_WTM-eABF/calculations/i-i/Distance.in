@@ -5,12 +5,7 @@ colvar {
    name RMSD
   
    width 0.1
-
-   upperWall    8.0
-   
    upperBoundary 7.5
-
-   upperWallConstant 10.0
 
    extendedLagrangian on
    extendedFluctuation 0.2
@@ -27,6 +22,11 @@ colvar {
    }
 }
 
+harmonicWalls {
+   colvars RMSD
+   upperWalls     8.0
+   forceConstant 10.0
+}
 
 abf {
    colvars RMSD
