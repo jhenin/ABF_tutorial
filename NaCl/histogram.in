@@ -1,0 +1,30 @@
+colvarsTrajFrequency 5000
+colvarsRestartFrequency 5000
+
+colvar {
+    name IonDistance
+
+    width 0.1
+    lowerBoundary 2.0
+    upperBoundary 14.0
+
+    distance {
+        group1 {
+            atomnumbers { 1 }
+        }
+        group2 {
+            atomnumbers { 2 }
+	    }
+    }
+}
+
+histogram {
+    colvars IonDistance
+}
+
+harmonicWalls {
+    colvars     IonDistance
+    lowerWalls    2.0
+    upperWalls    14.0
+    forceConstant 1.0 
+} 

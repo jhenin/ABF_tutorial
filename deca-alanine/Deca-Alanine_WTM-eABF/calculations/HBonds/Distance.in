@@ -1,0 +1,69 @@
+colvarsTrajFrequency      2000
+colvarsRestartFrequency  20000
+
+colvar {
+   name HBONDS
+
+   width 0.05
+   upperBoundary 1.0
+
+   extendedLagrangian
+   extendedFluctuation 0.05
+   subtractAppliedForce on
+
+   hBond {
+      donor 42
+      acceptor 11
+      cutoff 3.6
+      componentCoeff 0.1667
+   }
+   hBond {
+      donor 52
+      acceptor 21
+      cutoff 3.6
+      componentCoeff 0.1667
+   }
+   hBond {
+      donor 62
+      acceptor 31
+      cutoff 3.6
+      componentCoeff 0.1667
+   }
+   hBond {
+      donor 72
+      acceptor 41
+      cutoff 3.6
+      componentCoeff 0.1667
+   }
+   hBond {
+      donor 82
+      acceptor 51
+      cutoff 3.6
+      componentCoeff 0.1667
+   }
+   hBond {
+      donor 97
+      acceptor 61
+      cutoff 3.6
+      componentCoeff 0.1667
+   }
+}
+
+harmonicWalls {
+   colvars HBONDS
+   upperWalls     1.1
+   forceConstant 10.0
+}
+
+abf {
+   colvars HBONDS
+   fullSamples   500
+}
+
+metadynamics {
+   colvars HBONDS
+   hillWeight 0.1
+   hillWidth  3
+   wellTempered   on
+   biasTemperature   16000
+}

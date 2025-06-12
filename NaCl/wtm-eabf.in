@@ -1,0 +1,44 @@
+colvarsTrajFrequency 5000
+colvarsRestartFrequency 5000
+
+colvar {
+    name IonDistance
+    width 0.1
+    lowerBoundary 2.0
+    upperBoundary 14.0
+    
+    extendedLagrangian    on
+    extendedFluctuation   0.1
+    subtractAppliedForce  on
+    expandboundaries      on  
+
+    distance {
+        group1 {
+            atomnumbers { 1 }
+        }
+        group2 {
+            atomnumbers { 2 }
+	    }
+    }
+}
+
+abf {
+    colvars IonDistance
+    fullSamples 500
+    writeCZARwindowFile on
+}
+
+metadynamics {
+    colvars             IonDistance
+    hillWeight          0.05
+    hillWidth           3.0
+    wellTempered        on
+    biasTemperature     4000
+}
+
+harmonicWalls {
+    colvars     IonDistance
+    lowerWalls    2.0
+    upperWalls    14.0
+    forceConstant 1.0 
+} 
