@@ -1,1 +1,1 @@
-To complete the FEP simlations, please srun the decouple-forward.conf and decouple-backward.conf NAMD input files.
+To complete the FEP simulations, please run the decouple-forward.conf and decouple-backward.conf NAMD input files.

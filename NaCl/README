@@ -1,0 +1,3 @@
+To run the ABF simulation, run the abf.conf file with NAMD
+To run the WTM-eABF simulation, run the wtm-eabf.conf file with NAMD
+To run the histogramming, run the histogram.conf file with NAMD
