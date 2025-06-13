@@ -9,7 +9,7 @@ colvar {
    upperBoundary 32.0
    
    extendedlagrangian on
-   extendedFluctuation 0.2
+   extendedFluctuation 0.1
    extendedTimeConstant 200
    extendedLangevinDamping 2.0
    subtractAppliedForce on
@@ -41,5 +41,5 @@ metadynamics {
    hillWeight 0.1
    hillWidth  3
    wellTempered   on
-   biasTemperature   4000
+   biasTemperature   1000
 }
