@@ -1,0 +1,37 @@
+set num_replicas        4
+numSteps 		2000000
+
+set inputname   	alad
+structure		$inputname.psf
+coordinates		$inputname.pdb
+binCoordinates		min-alphaL.restart.coor
+
+set temperature 	298.0 
+temperature		$temperature
+
+outputName      	alphaL.[myReplica]
+
+stochRescale 		on
+stochRescaleTemp 	$temperature
+stochRescalePeriod      1.0
+
+timestep		0.5
+
+outputEnergies          5000
+outputTiming            5000
+restartFreq             5000
+
+margin			1.0
+paraTypeCharmm		on
+parameters		par_all22_prot.prm
+
+exclude         	scaled1-4
+switching       	on
+switchDist      	10
+cutoff          	12
+pairListDist    	14
+
+rigidBonds      	all
+
+colvars         	on
+colvarsConfig   	alphaL.colvars

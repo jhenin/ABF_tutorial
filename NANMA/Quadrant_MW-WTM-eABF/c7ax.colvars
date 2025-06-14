@@ -6,7 +6,7 @@ colvar {
 
    width                    5.0
 
-   lowerboundary         -180.0
+   lowerboundary            0.0
    upperboundary          180.0
 
    extendedlagrangian        on
@@ -14,6 +14,7 @@ colvar {
    extendedTimeConstant     500
    subtractAppliedForce      on
    extendedLangevinDamping 10.0
+   expandBoundaries          on
 
    dihedral {
       group1 {
@@ -37,13 +38,14 @@ colvar {
    width                    5.0
 
    lowerboundary         -180.0
-   upperboundary          180.0
+   upperboundary            0.0
 
    extendedlagrangian        on
    extendedFluctuation      5.0
    extendedTimeConstant     500
    subtractAppliedForce      on
    extendedLangevinDamping 10.0
+   expandBoundaries          on
 
    dihedral {
       group1 {
@@ -61,13 +63,32 @@ colvar {
    }
 }
 
+harmonicWalls {               
+   name               phi-wall
+   colvars                 phi 
+   lowerWalls              0.0
+   upperWalls            180.0
+   lowerWallConstant       0.2
+   upperWallConstant       0.2
+}        
+
+harmonicWalls {               
+   name               psi-wall
+   colvars                 psi 
+   lowerWalls           -180.0
+   upperWalls              0.0
+   lowerWallConstant       0.2
+   upperWallConstant       0.2
+}        
+
 abf {
    colvars             phi psi
    fullSamples             500
    writeCZARwindowFile     yes
    historyFreq           50000
-   inputPrefix		c7eq alphaL alphaR c7ax
-   }
+   shared on
+   sharedFreq 500
+}
 
 metadynamics {
    colvars             phi psi
