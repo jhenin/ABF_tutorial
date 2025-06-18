@@ -66,7 +66,7 @@ abf {
    fullSamples             500
    writeCZARwindowFile     yes
    historyFreq           50000
-   inputPrefix		c7eq alphaL alphaR c7ax
+   inputPrefix		c7eq.abf1 alphaL.abf1 alphaR.abf1 c7ax.abf1
    }
 
 metadynamics {
