@@ -1,3 +1,5 @@
+Simulations can be run using the "namd3 [filename].conf", where [filename] should be replaced with the appropriate name.
+
 The FEP calculations can be executed by running the decouple-forward.conf and decouple-backward.conf files in the FEP folder.
 The WTM-eABF calculation can be performed by running the abf.in file in the WTM-eABF/run folder.
 
