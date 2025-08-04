@@ -1,3 +1,7 @@
+Simulations can be run using the "namd3 [filename].conf", where [filename] should be replaced with the appropriate name.
+
 To run the ABF simulation, run the abf.conf file with NAMD
 To run the WTM-eABF simulation, run the wtm-eabf.conf file with NAMD
 To run the histogramming, run the histogram.conf file with NAMD
+
+All output will be created in the output folder.

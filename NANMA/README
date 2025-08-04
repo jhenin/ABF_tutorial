@@ -1,0 +1,11 @@
+Simulations can be run using the "namd3 [filename].conf", where [filename] should be replaced with the appropriate name.
+
+The input files for performing the simulations shown in the associated manuscript are located in the NANMA
+folder. Here there are multiple subfolders for the various approaches to simulating the isomerization, namely
+unbiased simulations (Quadrant), WTM-eABF (Quadrant_WTM-eABF) and multiple walker WTM-eABF (Quadrant_MW-WTM-eABF).
+
+
+To perform the simulations, a run.sh script is present in each folder, which contains the commands to successively
+run each quadrant simulation using NAMD.
+
+The run folder contains configuration files for merging each of the four quadrants into a single result.

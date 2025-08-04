@@ -1,1 +1,9 @@
-To complete the calculations, run the abf.conf files in the approapriate directories in the calculations folder.
+Simulations can be run using the "namd3 [filename].conf", where [filename] should be replaced with the appropriate name.
+
+The input files for performing the simulations shown in the associated manuscript are located in the deca-alanine
+folder. The Deca-Alanine folder within contains the ABF simulations with C-C and C-C groups distances as the CVs.
+The Deca-Alanine_WTM-eABF folder within contains the WTM-eABF simulations with C-C, C-C groups, RMSD and HBonds as CVs.
+
+The simulations are present in the respective calculations folders, while the common folder contains the force-field.
+
+In all cases the abf.conf files is the input and the Distance.in file contains the colvars configuration.
