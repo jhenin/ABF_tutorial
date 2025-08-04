@@ -1,1 +1,57 @@
-Each folder contains the inputs/outputs for the respective exercises. Consult the README in the folders for running the simulations.
+Dear tutorial reader,
+
+The tutorial requires some basic knowledge of NAMD and VMD. For performing the simulations we recommend NAMD 3.0 and
+above, as the input files have been tested with this version.
+
+Simulations can be run using the "namd3 [filename].conf", where [filename] should be replaced with the appropriate name.
+Each folder contains the inputs/outputs for the respective exercises. Consult the README in the folders for running
+the simulations.
+
+The files in this repository are structured as follows:
+
+1) Ion-pairing exercise:
+    - The input files for performing the simulations shown in the associated manuscript are located in the NaCl folder.
+
+    ABF simulation:
+    - The abf.conf file contains the input for a NAMD simulation.
+    - The abf.in file contains the configuration for the colvars module
+
+    WTM-eABF simulation:
+    - The wtm-eabf.conf file contains the input for a NAMD simulation.
+    - The wtm-eabf.in file contains the configuration for the colvars module
+
+    Histogram:
+    - The histogram.conf file contains the input for a NAMD simulation.
+    - The histogram.in file contains the configuration for the colvars module
+
+    The output folder contains the resulting PMF files as well as the colvars trajectories.
+
+2) Deca-Alanine exercise:
+    - The input files for performing the simulations shown in the associated manuscript are located in the deca-alanine
+     folder. The Deca-Alanine folder within contains the ABF simulations with C-C and C-C groups distances as the CVs.
+     The Deca-Alanine_WTM-eABF folder within contains the WTM-eABF simulations with C-C, C-C groups, RMSD and HBonds as
+      CVs.
+    - The simulations are present in the respective calculations folders, while the common folder contains the force-field.
+      In all cases the abf.conf files is the input and the Distance.in file contains the colvars configuration.
+
+
+3) Ethanol hydration exercise:
+    - The input files for performing the simulations shown in the associated manuscript are located in the Ethanol-hydration
+     folder. Here there are multiple subfolders for the various steps of the process, including minimization (minimize),
+     thermalization (thermalize_eth), WTM-eABF simulation (WTM-eABF) and FEP calculation (FEP).
+
+    - To perform the WTM-eABF simulations, run the abf.conf file in WTM-eABF/run/
+    - To perform the FEP simulations, run the decouple-forward.conf and decouple-backward.conf files in FEP folder.
+    - The output can be visualized using the ParseFEP function implemented in NAMD, or via examining the output files
+      and extracting the data via scripting.
+
+4) NANMA isomerization exercise:
+    - The input files for performing the simulations shown in the associated manuscript are located in the NANMA
+     folder. Here there are multiple subfolders for the various approaches to simulating the isomerization, namely
+     unbiased simulations (Quadrant), WTM-eABF (Quadrant_WTM-eABF) and multiple walker WTM-eABF (Quadrant_MW-WTM-eABF).
+
+
+    - To perform the simulations, a run.sh script is present in each folder, which contains the commands to successively
+     run each quadrant simulation using NAMD.
+    - The run folder contains configuration files for merging each of the four quadrants into a single result.
+
